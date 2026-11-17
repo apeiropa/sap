@@ -1,0 +1,27 @@
+# Ejemplo sin secretos. No copiar credenciales ni datos de negocio al repositorio.
+# Las URLs reales y secretos deben inyectarse desde el entorno seguro aprobado.
+integrations:
+  jira:
+    enabled: false
+    base_url: ${JIRA_BASE_URL}
+    auth_secret_ref: ${JIRA_AUTH_SECRET_REF}
+    mode: read_only
+  confluence:
+    enabled: false
+    base_url: ${CONFLUENCE_BASE_URL}
+    auth_secret_ref: ${CONFLUENCE_AUTH_SECRET_REF}
+    mode: read_only
+  sap:
+    enabled: false
+    system_id: ${SAP_SYSTEM_ID}
+    auth_secret_ref: ${SAP_AUTH_SECRET_REF}
+    mode: read_only
+    environments:
+      development: disabled
+      quality: disabled
+      production: disabled
+
+audit:
+  enabled: true
+  redact_secrets: true
+  redact_personal_data: true

@@ -1,0 +1,14 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets/
+config/local.*
+
+# Local tooling
+.venv/
+venv/
+__pycache__/
+.DS_Store
